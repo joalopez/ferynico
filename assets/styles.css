@@ -563,6 +563,8 @@ nav ul li a:hover {
 
 textarea {
     border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
 }
 
 #rsvp-form input::placeholder, #rsvp-form select::placeholder {
