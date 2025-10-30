@@ -35,6 +35,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     } */
 
+    // Lógica del Menú Toggle (NUEVO)
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+    const navLinks = mainNav.querySelectorAll('a');
+
+    // Función para alternar el menú
+    function toggleMenu() {
+        // Alterna la clase 'is-open' en el NAV
+        mainNav.classList.toggle('is-open');
+        
+        // Alterna el atributo ARIA para accesibilidad
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+    }
+
+    // Abrir/Cerrar menú al hacer clic en el botón
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Cerrar el menú al hacer clic en un enlace (importante para mobile)
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Verifica si el menú está abierto antes de cerrarlo
+            if (mainNav.classList.contains('is-open')) {
+                toggleMenu();
+            }
+        });
+    });
+
     // Lógica del Lightbox de Galería (NUEVO)
     const lightboxModal = document.getElementById("lightbox-modal");
     const lightboxImage = document.getElementById("lightbox-image");
