@@ -1,0 +1,797 @@
+/* Estilos Globales */
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;700&family=Aboreto&family=Birthstone&family=Cormorant:wght@500&family=EB+Garamond:wght@400..800&family=Manrope&family=MonteCarlo&display=swap');
+
+body {
+    font-family: 'Manrope', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FCFBFF;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Aplicamos el scroll suave a toda la página */
+html {
+    scroll-behavior: smooth; 
+}
+
+/* Texto Seleccionado */
+::selection {
+  color: white; /* Color of the selected text itself */
+  background-color: #74919a; /* Background color of the selection highlight */
+}
+
+/* Altura de tu encabezado: 80px (ajusta este valor según la altura real de tu header) */
+:target {
+    scroll-margin-top: 130px; 
+}
+
+/* Colores*/
+.blue{
+    color: #1e2226;
+}
+.blue-gray
+{
+    color: #6c8292;
+}
+/* Header/Navegación */
+header {
+    background-color: #1e2226;
+    color: white;
+    padding: 1.8em 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    /* PROPIEDADES CLAVE PARA HACERLO STICKY */
+    position: sticky; /* Define que el elemento debe ser "pegajoso" */
+    top: 0;           /* Especifica que debe pegarse a 0 píxeles del borde superior */
+    z-index: 1000;    /* Asegura que el header siempre esté por encima del resto del contenido */
+}
+
+.logo {
+    font-size: 1.4em;
+    font-weight: medium;
+    font-family: 'cormorant', serif;
+    text-transform: uppercase
+}
+
+.logo > span {
+    font-size: .8em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 2em;
+    font-family: 'manrope', sans-serif;
+    text-transform: uppercase;
+    font-size: .8em;
+    letter-spacing: .2em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+/* Sección Principal (Hero) - MODIFICADA */
+.hero {
+    /* Altura completa del viewport */
+    height: 90vh; 
+    
+    /* Configuración de la imagen de fondo */
+    background-image: url('img/hero-bg.webp'); /* Asegúrate de tener esta imagen en la carpeta assets */
+    background-size: cover; /* Hace que la imagen cubra toda el área */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat;
+    
+    /* Usamos Flexbox para control de contenido */
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: flex-start; /* Inicialmente los elementos inician arriba */
+    align-items: center; /* Centra horizontalmente */
+    
+    color: white;
+    text-align: center;
+    padding: 4em 1em; /* Padding horizontal */
+    box-sizing: border-box; /* Asegura que el padding no añada altura extra */
+}
+
+.hero h1 {
+    font-size: 5em; /* Hacemos el título más grande */
+    font-family: 'aboreto', cursive;
+    font-weight: 400;
+    letter-spacing: 0.1em; 
+    margin-block: 0;
+}
+
+/* Usamos margin-top: auto para empujar los elementos hacia el fondo */
+.hero .subtitle {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.5em;
+    font-weight: 300;
+    letter-spacing: .2em;
+    margin-top: auto; /* Esta es la clave: empuja este elemento hacia abajo */
+    margin-bottom: 15px; /* Espacio antes del botón */
+}
+
+/* Botón de Llamado a la Acción (CTA) */
+.cta-btn {
+    background-color: #f2f1f5;
+    color: #6c8292;
+    border: none;
+    padding: .8em 3em; /* Hacemos el botón un poco más grande */
+    font-family: 'abhaya libre', serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: .1em;
+    cursor: pointer;
+    border-radius: 50px; /* Borde más redondo */
+    z-index: 10; /* Asegura que el botón esté visible */
+    transition: background-color 0.3s;
+    border: 2px solid #f2f1f5;
+}
+
+.cta-btn-sec{
+    background-color: #313f4d;
+    color: #ffffff;
+    border: none;
+    padding: .8em 3em; /* Hacemos el botón un poco más grande */
+    font-family: 'manrope', sans-serif;
+    font-size: .8em;
+    font-weight: 400;
+    letter-spacing: .1em;
+    cursor: pointer;
+    border-radius: 50px; /* Borde más redondo */
+    z-index: 10; /* Asegura que el botón esté visible */
+    transition: background-color 0.3s;
+    border: 2px solid #f2f1f5;
+}
+
+.cta-btn:hover {
+    background-color: #6c8292;
+    color: #f2f1f5;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+/* Sección de Características */
+.features {
+    /* Altura del 80% del viewport */
+    height: 90vh; 
+    
+    padding: 4em 1em;
+    display: flex; /* Asegura que el contenido se pueda centrar */
+    align-items: center; /* Centra verticalmente el feature-content */
+    justify-content: center;
+    background-color: #fcfbff;
+    box-sizing: border-box; /* Incluye padding y borde en la altura */
+    overflow: hidden; /* Importante para que el contenido no se salga si es demasiado alto */
+}
+
+.feature-content {
+    width: 100%;
+    max-width: 1000px; /* Limita el ancho máximo del contenido */
+    /* Por defecto (móvil), los elementos estarán apilados */
+}
+
+/* Estilos de los elementos internos (apilados por defecto) */
+.feature-image img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh; /* Limita la altura de la imagen en móvil */
+    object-fit: cover;
+    display: block;
+    margin-bottom: 1em;
+}
+
+/* Estilos de la imagen dentro de la segunda columna (texto) */
+.feature-text-image img {
+    width: 100%;
+    height: auto;
+    max-height: 20vh; /* Ajusta esto según el tamaño deseado en móvil */
+    object-fit: contain; /* 'contain' para que la imagen se ajuste sin recortarse */
+    display: block;
+    margin: 1em 0; /* Margen arriba y abajo */
+    border-radius: 8px;
+}
+
+.feature-text {
+    padding: 1em;
+}
+
+.feature-text h2 {
+    font-family: 'eb garamond', serif;
+    font-family: 'EB Garamond', serif;
+    font-size: 2.5em;
+    font-weight: 300;
+    letter-spacing: .1em;
+}
+
+/* 🖥️ MEDIA QUERY para Desktop (pantallas de al menos 768px de ancho) */
+@media (min-width: 768px) {
+    
+    .feature-content {
+        display: flex; 
+        flex-direction: row; 
+        gap: 40px; 
+        align-items: center; /* Centra los items de las columnas verticalmente */
+    }
+
+    .feature-image,
+    .feature-text {
+        flex: 1; 
+        height: 100%; /* Las columnas ocupan toda la altura de feature-content */
+        display: flex; /* Habilitamos flex para la columna de texto también */
+        flex-direction: column; /* Apila el texto y la imagen dentro de la columna */
+        justify-content: end; /* Centra el contenido dentro de la columna */
+    }
+
+    .feature-image img {
+        width: 100%; 
+        height: 100%; /* Ocupa el 100% de la altura de su columna */
+        object-fit: cover;
+        margin-bottom: 0; 
+    }
+
+    .feature-text-image img {
+        max-width: 100%; /* Ajusta el ancho máximo de la segunda imagen en desktop */
+        height: auto;
+        object-fit: contain;
+        margin: 1em auto; /* Centra la imagen horizontalmente en la columna */
+    }
+}
+
+/* Sección 3: RSVP/Confirmación */
+.rsvp-section {
+    background-color: #74919a; /* Color de fondo especificado */
+    height: 60vh;              /* 60% de la altura del viewport */
+    color: white;
+    text-align: center;
+    padding: 1em 1em;
+    
+    /* Usamos Flexbox para centrar y distribuir el contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    box-sizing: border-box;
+    overflow: hidden; /* Previene desbordamiento si el texto es muy largo */
+}
+
+.rsvp-content {
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Estilos para el Primer Texto (Manrope 1rem) */
+.rsvp-instruction {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    max-width: 40vw;
+    margin: auto;
+
+}
+
+/* Estilos para el Segundo Texto (Montecarlo 2rem) */
+.rsvp-thanks {
+    font-family: 'Montecarlo', cursive;
+    font-size: 3em;
+    margin: 0.5rem 0 1rem 0; /* Espaciado ajustado */
+    font-weight: normal;
+}
+
+/* Estilos para el Tercer Texto/Nota (Manrope 1rem) */
+.rsvp-note {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    opacity: 0.8; /* Lo hacemos ligeramente menos prominente */
+}
+
+/* Sección 4: Itinerario/Eventos - MODIFICADA */
+.itinerary-section {
+    padding: 4em 1em;
+    text-align: center;
+    background-color: #f4f4f4; /* Fondo claro */
+    height: auto; 
+}
+
+.itinerary-section h2 {
+    font-size: 2em;
+    margin-bottom: 1.5em;
+    color: #333;
+}
+
+/* Nuevo estilo para los bloques de eventos (uno debajo del otro) */
+.event-block {
+    /* No tiene fondo ni sombra */
+    padding: 1.5em 0; /* Espaciado interno vertical */
+    margin: 0 auto 3em auto; /* Centra el bloque y añade margen inferior para separarlo del siguiente */
+    max-width: 900px; /* Limitamos el ancho para que el contenido no se extienda demasiado */
+}
+
+/* El último bloque no necesita la línea divisoria inferior */
+.itinerary-section .event-block:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+
+.event-block h3 {
+    font-size: 2.8em;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #1E2226; 
+    font-family: 'aboreto', cursive;
+    font-weight: 400;
+}
+
+.event-details {
+    font-size: 1.4em;
+    margin: 0em 0;
+    font-weight: 400;
+    font-family: 'eb garamond', serif;
+}
+
+/* Estilo del botón de Ubicación */
+.location-btn {
+    display: inline-block;
+    background-color: #74919a; 
+    color: white;
+    padding: .5em 3em;
+    margin-top: 1em;
+    text-decoration: none; 
+    font-family: 'abhaya libre', serif;
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+.location-btn:hover {
+    background-color: #5d7881;
+}
+
+/* Eliminamos la Media Query, ya que no se necesita un diseño diferente para desktop */
+
+/* Sección 5: Foto con Efecto Parallax (Scroll Fixed) - MODIFICADA */
+#full-photo {
+    /* Altura del 70% del viewport */
+    height: 70vh; 
+    
+    /* 1. Establecer la imagen de fondo */
+    background-image: url('../assets/img/galeria/fer-y-nico-gallery-14.webp'); 
+    
+    /* 2. Propiedad clave para el efecto FIXED */
+    background-attachment: fixed; 
+    
+    /* 3. Asegurar que la imagen cubra toda la sección */
+    background-position: top; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    
+    /* Opción: puedes añadir un overlay semitransparente oscuro 
+       para mejorar el contraste si planeas poner texto encima más adelante.
+    background-color: rgba(0, 0, 0, 0.4); 
+    background-blend-mode: overlay; */
+}
+
+#full-photo img {
+    /* La imagen debe ocupar el 100% del ancho y el 100% de la altura de la sección */
+    width: 100%;
+    height: 100%;
+    
+    /* Asegura que la imagen cubra toda la sección sin distorsionarse, recortando si es necesario */
+    object-fit: cover; 
+    
+    /* Elimina cualquier espacio adicional que pueda crear la imagen */
+    display: block;
+}
+
+/* Sección 6: Regalos/Cuentas */
+.gifts-section {
+    padding: 4em 1em;
+    text-align: center;
+}
+
+/* Estilos para el Bloque 1 (Birthstone) */
+.gift-message {
+    font-family: 'Birthstone', cursive;
+    font-size: 2.4em; /* Más grande para destacar la tipografía */
+    line-height: 1.2;
+    max-width: 900px;
+    margin: 0 auto 1em auto;
+    color: #333;
+}
+
+.bank-details-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+/* Estilos para los Bloques 2 y 3 (EB Garamond) */
+.bank-detail {
+    padding: 1.5em;
+    margin-bottom: 2em; /* Espacio entre los bloques */
+    border-radius: 8px;
+}
+
+.bank-detail:last-child {
+    margin-bottom: 0; /* Elimina el margen inferior del último bloque */
+}
+
+.bank-name {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #6c8292; /* Color de marca para el nombre */
+}
+
+.account-info {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.4em;
+    margin: 0;
+    color: #6c8292;
+}
+
+/* Estilos del Modal (Popup) */
+
+/* El Overlay (Fondo negro transparente que cubre la página) */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Permanece en su lugar */
+    z-index: 2000; /* Asegura que esté por encima de todo (incluyendo el sticky header) */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; /* Habilita scroll si el contenido es demasiado grande */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+}
+
+/* Contenido Principal del Modal */
+.modal-content {
+    background-color: white;
+    margin: 5% auto; /* Centrado vertical y con espacio arriba/abajo */
+    width: 90%; 
+    max-width: 950px; /* Ancho máximo para desktop */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    position: relative;
+    padding: 0; /* Quitamos el padding global para controlar las mitades */
+    min-height: 550px; /* Altura mínima para que la imagen se vea bien */
+}
+
+/* Botón de Cerrar (X) */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    z-index: 2010;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* La División en Dos Mitades (Usando Flexbox) */
+.modal-split {
+    display: flex;
+    height: 100%; /* Ocupa la altura del modal-content */
+    min-height: 450px;
+}
+
+/* Mitad Derecha (Formulario) */
+.modal-right {
+    padding: 40px 6em 1em 3em;
+    flex: 1; /* Ocupa la mitad del ancho en desktop */
+    text-align: left;
+    background-color: #f2f2f0;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.modal-right h2 {
+    font-family: 'aboreto', cursive;
+    font-weight: 400;
+    font-size: 2.5em;
+    line-height: 1.2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Estilos del Formulario */
+#rsvp-form label {
+    margin-top: 10px;
+    font-family: 'eb garamond', serif;
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+#rsvp-form input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+#rsvp-form input, #rsvp-form select, textarea {
+    width: 90%;
+    padding: 10px 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 0px solid #ccc;
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-family: 'manrope', sans-serif;
+}
+
+textarea {
+    border-radius: 10px;
+}
+
+#rsvp-form input::placeholder, #rsvp-form select::placeholder {
+    color: #bdbdbd;
+    font-family: 'manrope', sans-serif;
+}
+
+.submit-btn {
+    width: 40%;
+    margin-top: 20px;
+    padding: 1em;
+}
+
+.modal-note {
+    font-size: 0.85em;
+    margin-top: 20px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Estilos del Formulario - MODIFICADO */
+
+/* ----------------------------------- */
+/* NUEVA REGLA PARA ALINEAR CAMPOS */
+/* ----------------------------------- */
+.form-row {
+    display: flex; /* Habilita la alineación horizontal */
+    gap: 15px; /* Espacio entre los campos de Nombre y Apellido */
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1; /* Permite que cada grupo ocupe la mitad del espacio disponible */
+}
+
+/* ----------------------------------- */
+/* Estilos para que los inputs ocupen el 100% de su grupo */
+/* ----------------------------------- */
+#rsvp-form input[type="text"], 
+#rsvp-form input[type="email"], 
+#rsvp-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 0; /* Eliminamos el margen inferior para que lo controle .form-row */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para los Radios */
+.radio-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.radio-group input[type="radio"] {
+    width: auto; /* Permite que el radio mantenga su tamaño pequeño */
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.radio-group label {
+    font-weight: normal;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+/* Media Query para móvil: Apilamos los campos en pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .form-row {
+        flex-direction: column; /* Apila Nombre y Apellido */
+        gap: 0; /* Elimina el gap en móvil */
+    }
+    .form-group {
+        margin-bottom: 10px; /* Añade espacio entre los campos apilados */
+    }
+}
+
+
+/* Mitad Izquierda (Imagen de Fondo) */
+.modal-left {
+    flex: 1; /* Ocupa la otra mitad del ancho en desktop */
+    
+    background-image: url('../assets/img/galeria/fer-y-nico-gallery-7.webp'); /* Imagen de Fondo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px 0 0 10px;
+
+    
+    /* Por defecto, la ocultamos en móvil */
+    display: none; 
+}
+
+
+/* 🖥️ MEDIA QUERY para Desktop (Pantallas de al menos 768px) */
+@media (min-width: 768px) {
+    .modal-left {
+        display: block; /* Mostrar la imagen en desktop */
+    }
+}
+
+/* Sección 7: Galería como Slider - MODIFICADA para varias imágenes visibles */
+.gallery-slider-section {
+    padding: 4em 1em 0 1em;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.slider-container {
+    max-width: 1400px; /* Incrementamos el ancho máximo para 4 imágenes */
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; 
+    border-radius: 8px;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* Ajustamos el gap aquí */
+    gap: 15px; 
+    padding: 0 15px; /* Para que el gap se vea en los bordes */
+    box-sizing: border-box; /* Incluir padding en el cálculo del ancho */
+}
+
+.slider-item {
+    flex-shrink: 0;
+    height: 100px; /* Ajustamos la altura para que se vea bien con más items */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Indica que la imagen es clicable */
+    
+    /* Por defecto (Mobile): 3 imágenes por vista */
+    width: calc(100% / 3 - 10px); /* 100% / 3 items - gap ajustado */
+    /* min-width: calc((100% / 3) - 10px); */ /* Para asegurar que no se encojan más */
+}
+
+.slider-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 5px; /* Bordes suaves para las imágenes */
+}
+
+/* Botones de Navegación del Slider (sin cambios) */
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(116, 145, 154, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.8em;
+    border-radius: 5px;
+    z-index: 1; 
+    transition: background-color 0.3s;
+}
+
+.slider-button:hover {
+    background-color: rgba(116, 145, 154, 0.7);
+}
+
+.slider-button.prev {
+    left: 10px;
+}
+
+.slider-button.next {
+    right: 10px;
+}
+
+
+/* 🖥️ MEDIA QUERY para Desktop (4 imágenes por vista) */
+@media (min-width: 768px) { /* Usamos 768px como punto de quiebre para desktop */
+    .slider-item {
+        width: calc(100% / 4 - 11.25px); /* 100% / 4 items - gap ajustado (15px de gap / 4 items * 3 espacios) */
+        /* min-width: calc((100% / 4) - 11.25px); */
+        height: 350px; /* Un poco más altas en desktop */
+    }
+}
+
+
+/* 📱 MEDIA QUERY para Tabletas (2 columnas) */
+@media (min-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+        gap: 20px;
+    }
+}
+
+/* 🖥️ MEDIA QUERY para Desktop (4 columnas) */
+@media (min-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    }
+}
+
+/* Estilos Específicos para el Lightbox */
+#lightbox-modal {
+    /* Reutiliza .modal, pero lo hacemos más transparente y centrado */
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo más oscuro */
+    z-index: 3000; /* Más alto que el RSVP modal */
+}
+
+.lightbox-content {
+    /* No queremos el margen del modal RSVP */
+    margin: auto; 
+    padding: 20px;
+    background: transparent; /* Fondo del contenido transparente */
+    width: 90%; 
+    max-width: 90vw; /* Ocupa casi todo el ancho del viewport */
+    height: 90vh; /* Ocupa casi toda la altura del viewport */
+    display: flex; /* Usamos Flexbox para centrar la imagen */
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+}
+
+#lightbox-image {
+    display: block;
+    max-width: 100%; /* No se sale del contenedor */
+    max-height: 100%; /* No se sale del contenedor */
+    object-fit: contain; /* Muestra la imagen completa sin recortar */
+    border-radius: 5px;
+}
+
+/* Botón de Cerrar del Lightbox */
+.lightbox-close-button {
+    color: white; /* Color blanco para el fondo oscuro */
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    z-index: 3010;
+}
+
+.lightbox-close-button:hover,
+.lightbox-close-button:focus {
+    color: #ccc;
+    text-decoration: none;
+    cursor: pointer;
+}
