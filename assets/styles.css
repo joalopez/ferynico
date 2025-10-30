@@ -817,6 +817,11 @@ textarea {
 }
 
 @media (max-width:576px) {
+    #full-photo {
+        background-attachment: scroll; /* Desactiva el efecto fixed en móvil */
+    }
+
+
     .hero h1 {
         font-size: 3.2em; /* Tamaño más pequeño en móvil */
     }
