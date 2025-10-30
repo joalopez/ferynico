@@ -547,7 +547,7 @@ nav ul li a:hover {
 
 #rsvp-form input[type="radio"] {
     width: auto;
-    margin-right: 10px;
+    margin-right: 2px;
 }
 
 #rsvp-form input, #rsvp-form select, textarea {
